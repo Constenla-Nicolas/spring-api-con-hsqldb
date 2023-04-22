@@ -48,7 +48,7 @@ public class tiendaController {
     public List<ProductModel> getAllProducts(){
         return productService.getProducts();
     }
-    @RequestMapping(value = "/api/getbyprice", method = RequestMethod.GET)
+    @RequestMapping(value = "/api/sortbyprice", method = RequestMethod.GET)
     @ResponseBody
     public List<ProductModel> getSortedPrice(){
         return productService.getSortedPrice();
@@ -58,7 +58,7 @@ public class tiendaController {
     
         try {
            int tempid= Integer.parseInt(id);
-           System.out.println("tempid "+ tempid);
+            
             return productService.getProductbyId(tempid);
         } catch (Exception e) {
             return productService.getProductbyName(id);
