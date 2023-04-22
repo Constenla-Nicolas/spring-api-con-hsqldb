@@ -37,11 +37,11 @@ public class tiendaController {
  
  
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value =  "/api", method = RequestMethod.GET)
     public List<ProductModel> main(){
         return productService.getProducts();
     }
-
+    
 
     @RequestMapping(value = "/api/get", method = RequestMethod.GET)
     @ResponseBody
