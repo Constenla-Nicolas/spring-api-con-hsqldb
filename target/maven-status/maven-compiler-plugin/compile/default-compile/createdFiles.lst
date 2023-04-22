@@ -1,0 +1,6 @@
+com\tienda\service\ProductService.class
+com\tienda\main\tiendaController.class
+com\tienda\main\RepositoryInterface.class
+com\tienda\main\main.class
+com\tienda\main\MainApplication.class
+com\tienda\model\ProductModel.class

@@ -18,10 +18,13 @@ public class ProductModel {
     private int id;
     private String name;
     private String description;
-    private int price;
-    private int amount;
+    private Integer price=0;
+    private Integer amount=0;
 
-    public ProductModel(){}
+    public ProductModel(){
+       
+    }
+
     public ProductModel(int id,String name, String description,int price, int amount){
         this.name=name;
         this.description=description;

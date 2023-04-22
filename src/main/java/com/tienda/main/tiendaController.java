@@ -37,33 +37,22 @@ public class tiendaController {
  
  
 
-    // @RequestMapping(value = "/", method = RequestMethod.GET)
-    // public List<String> hello() throws SQLException, ClassNotFoundException{
-    //     Class.forName("org.hsqldb.jdbc.JDBCDriver");
-    //     Connection conn = DriverManager.getConnection(
-    //                          "jdbc:hsqldb:mem:mydb", "SA", "1234");
- 
-    //     Statement st = conn.createStatement();
-   
-    //     String sql = "SELECT * FROM INFORMATION_SCHEMA.SYSTEM_TABLES where TABLE_NAME='PRODUCTO' ";
-    //     System.out.println(st.executeQuery(sql));
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public List<ProductModel> main(){
+        return productService.getProducts();
+    }
 
-
-
-    //     DatabaseMetaData md = conn.getMetaData();
-    // ResultSet rs = md.getTables(null, null, "%", null);
-    // List<String> listaStrings= new ArrayList<String>();
-    // while (rs.next()) {
-    // listaStrings.add(rs.getString(3));}
-    //     return listaStrings;
-    // }
 
     @RequestMapping(value = "/api/get", method = RequestMethod.GET)
     @ResponseBody
     public List<ProductModel> getAllProducts(){
         return productService.getProducts();
     }
-
+    @RequestMapping(value = "/api/getbyprice", method = RequestMethod.GET)
+    @ResponseBody
+    public List<ProductModel> getSortedPrice(){
+        return productService.getSortedPrice();
+    }
     @RequestMapping(value = "/api/getProduct/{productId}", method = RequestMethod.GET)
     public List<ProductModel> getProductById(@PathVariable("productId") String id){
     
@@ -76,21 +65,17 @@ public class tiendaController {
         }
       
     }
-  
- 
-    
+      
     @RequestMapping(path="api/put/{productId}", method = RequestMethod.PUT)
-    public void updateProduct(@PathVariable("productid") int id,
+    public void updateProduct(@PathVariable("productId") int id,
                               @RequestParam(required = false) String name,
                               @RequestParam(required = false) String description,
-                              @RequestParam(required = false) int price,
-                              @RequestParam(required = false) int amount){
-                try {
-                    productService.updateProduct(id, name, description, amount, price);
-                } catch (Exception e) {
-                  
-                    e.printStackTrace();
-                }
+                              @RequestParam(required = false) Integer price,
+                              @RequestParam(required = false) Integer amount)
+                              {
+                        
+                    productService.updateProduct(id, name==null?"":name, description==null?"":description, amount==null?0:amount, price==null?0:price);
+                
     }
    
     @RequestMapping(value ="/api/post", method =  RequestMethod.POST)
