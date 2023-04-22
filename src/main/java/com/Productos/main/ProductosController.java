@@ -1,4 +1,4 @@
-package com.tienda.main;
+package com.Productos.main;
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -24,12 +24,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver;
 
-import com.tienda.model.ProductModel;
-import com.tienda.service.ProductService;
+import com.Productos.model.ProductModel;
+import com.Productos.service.ProductService;
 
 @RestController
 
-public class tiendaController {
+public class ProductosController {
     
     
   @Autowired

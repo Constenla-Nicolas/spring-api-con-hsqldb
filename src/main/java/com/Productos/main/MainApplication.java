@@ -1,4 +1,4 @@
-package com.tienda.main;
+package com.Productos.main;
 
 import java.util.List;
 
@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tienda.model.ProductModel;
-@EntityScan("com.tienda.model")   
+import com.Productos.model.ProductModel;
+@EntityScan("com.Productos.model")   
 @SpringBootApplication(scanBasePackages={
-	"com.tienda", "com.tienda.main.MainApplication"})
+	"com.Productos", "com.Productos.main.MainApplication"})
  
 public class MainApplication {
 

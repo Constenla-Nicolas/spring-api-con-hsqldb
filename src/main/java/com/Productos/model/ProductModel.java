@@ -1,4 +1,4 @@
-package com.tienda.model;
+package com.Productos.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;

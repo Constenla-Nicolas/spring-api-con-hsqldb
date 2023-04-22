@@ -1,4 +1,4 @@
-package com.tienda.service;
+package com.Productos.service;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tienda.main.RepositoryInterface;
-import com.tienda.model.ProductModel;
+import com.Productos.main.RepositoryInterface;
+import com.Productos.model.ProductModel;
  
 @Service
 public class ProductService {
