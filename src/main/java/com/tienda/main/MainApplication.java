@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tienda.model.ProductModel;
-@EntityScan("com.tienda.*")   
+@EntityScan("com.tienda.model")   
 @SpringBootApplication(scanBasePackages={
 	"com.tienda", "com.tienda.main.MainApplication"})
  

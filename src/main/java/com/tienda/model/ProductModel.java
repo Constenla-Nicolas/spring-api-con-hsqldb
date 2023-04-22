@@ -2,37 +2,46 @@ package com.tienda.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
- 
+
+
+
+
 
 @Entity
 @Table(name="PRODUCTO")
 public class ProductModel {
-    private int id;   
+    
+    private int id;
     private String name;
     private String description;
     private int price;
     private int amount;
-   
+
     public ProductModel(){}
-    // public ProductModel(int id,String name, String description,int price, int amount){
-    //     this.id=id;
-    //     this.price=price;
-    //     this.amount=amount;
-    //     this.name=name;
-    //     this.description=description;
-        
-    // }
+    public ProductModel(int id,String name, String description,int price, int amount){
+        this.name=name;
+        this.description=description;
+        this.id=id;
+        this.price=price;
+        this.amount=amount;
+       
+
+    }
 //.
-    
+
 public ProductModel(String name, String description,int price, int amount){
-    this.price=price;
-    this.amount=amount;
     this.name=name;
     this.description=description;
+    this.price=price;
+    this.amount=amount;
+ 
 }
-    @Id
+@Id
+@GeneratedValue (strategy = GenerationType.IDENTITY)
     public int getId() {
         return id;
     }
@@ -63,9 +72,9 @@ public ProductModel(String name, String description,int price, int amount){
     public void setAmount(int amount) {
         this.amount = amount;
     }
-    
 
- 
+
+
 
 
 }
