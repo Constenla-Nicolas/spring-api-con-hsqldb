@@ -74,7 +74,7 @@ public class tiendaController {
                               @RequestParam(required = false) Integer amount)
                               {
                         
-                    productService.updateProduct(id, name==null?"":name, description==null?"":description, amount==null?0:amount, price==null?0:price);
+                    productService.updateProduct(id, name==null?"":name, description==null?"":description, amount==null?-1:amount, price==null?-1:price);
                 
     }
    
